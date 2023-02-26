@@ -1,0 +1,28 @@
+{{#if this.contract.isVoting}}
+<p class="voting open">Die Abstimmung läuft</p>
+{{else}}
+<p class="voting closed">Die Abstimmung ist geschlossen</p>
+{{/if}}
+
+<h2>{{@title}}</h2>
+
+<ul class="affair">
+  {{#each this.affairs as |affair|}}
+  <li id="affair-{{affair.id}}">
+    <span style="float: right;">
+      <button disabled class="vote" type="button" {{did-insert this.hasVotedEl affair}} {{on 'click' (fn this.voteYay
+        affair)}}>Ja</button>
+      <br>
+      <button disabled class="vote" type="button" {{on 'click' (fn this.voteNay affair)}}>Nein</button>
+    </span>
+
+    {{!-- <button type="button" {{on 'click' (fn this.checkVote affair.id)}}>Check</button> --}}
+
+    <b>{{affair.ref}}</b>
+    <br>
+    {{this.sanitize affair.topic}}
+
+    <Polis @affair={{affair}} />
+  </li>
+  {{/each}}
+</ul>

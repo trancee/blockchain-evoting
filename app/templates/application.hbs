@@ -1,7 +1,5 @@
-{{page-title "BlockchainEvoting"}}
+{{page-title "Affairs"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<Connect />
 
-{{outlet}}
+<AffairsList @title="{{@model.name}}" @affairs={{@model.affairs}} />

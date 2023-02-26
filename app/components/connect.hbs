@@ -1,0 +1,12 @@
+<p>
+    <label for="wallet">Wallet</label>
+    <br>
+    <button class="connect" type="button" {{on 'click' this.connect}}>
+        {{#if this.account.account}}
+        {{ this.account.account}}
+        {{else}}
+        Verbinden
+        {{/if}}
+    </button>
+    {{!-- <button class="disconnect" type="button" {{on 'click' this.disconnect}}>Disconnect</button> --}}
+</p>

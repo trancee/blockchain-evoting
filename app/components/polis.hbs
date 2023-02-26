@@ -1,0 +1,29 @@
+<ul class="polis-result-container polis-result-container--main">
+    <li class="polis-result polis-result--yes js-polis-result-total--yesBar"
+        style={{this.percentageStyle true}}>
+        <p class="polis-result__title polis-result__title--yes">JA</p>
+        <div class="polis-result__bar--main polis-result__bar {{this.polisYes ""}}">
+            <p class="polis-result-relativ">
+                <span class="polis-result-relativ__number">{{this.percentage true}}</span>%
+            </p>
+        </div>
+        <p class="polis-result__text">
+            <span class="js-polis-result-total--absoluteYes">{{this.affair.yay}}</span> Stimme{{if (this.isPlural this.affair.yay)
+            "n"}}
+        </p>
+    </li>
+    <li class="polis-result polis-result--no polis-result--yes js-polis-result-total--noBar"
+        style={{this.percentageStyle false}}>
+        <p class="polis-result__title polis-result__title--no">NEIN</p>
+        <div class="polis-result__bar--main polis-result__bar {{this.polisNo ""}}">
+            <p class="polis-result-relativ">
+                <span class="polis-result-relativ__number js-polis-result-total-relativeNo">{{this.percentage
+                    false}}</span>%
+            </p>
+        </div>
+        <p class="polis-result__text">
+            <span class="js-polis-result-total--absoluteNo">{{this.affair.nay}}</span> Stimme{{if (this.isPlural this.affair.nay)
+            "n"}}
+        </p>
+    </li>
+</ul>
